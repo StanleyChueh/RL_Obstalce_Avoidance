@@ -37,7 +37,7 @@ mkdir src
 cd src
 
 # Clone your repository (assuming your repository is named turtlebot3_rl)
-git clone <your-repository-url>.git
+git clone https://github.com/StanleyChueh/RL_Obstalce_Avoidance.git
 
 # Build the workspace
 cd ~/rl_ws
@@ -46,4 +46,23 @@ colcon build
 # Source the workspace
 source install/setup.bash
 ```
-## 
+## Running the Code
+### Training the Model
+```
+# Run the training script
+ros2 run turtlebot3_rl train
+```
+### Testing the Model
+```
+# Run the testing script
+ros2 run turtlebot3_rl test
+```
+### Continuing Training with an Existing Model
+#### Load your existing model:
+```
+model = SAC.load("sac_turtlebot3_final.zip", env=env)
+```
+#### Load your existing model:
+```
+ros2 run turtlebot3_rl train
+```
