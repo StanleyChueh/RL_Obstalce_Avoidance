@@ -1,22 +1,39 @@
-from stable_baselines3 import PPO
+import gym
+from stable_baselines3 import SAC
 from turtlebot3_rl.env import TurtleBot3Env
-import numpy as np
 
 def main():
+    # Initialize the environment
     env = TurtleBot3Env()
 
     # Load the trained model
-    model = PPO.load("ppo_turtlebot3")
+    model = SAC.load("sac_turtlebot3_final.zip")
 
-    obs, _ = env.reset()
-    for _ in range(20):  # Test for a small number of steps
-        action, _states = model.predict(obs, deterministic=True)
-        obs, reward, done, truncated, info = env.step(action)
-        print(f"Action: {action}, Min Distance: {np.min(obs)}, Reward: {reward}, Done: {done}")
-        if done or truncated:
-            obs, _ = env.reset()
+    try:
+        while True:  # Infinite loop
+            obs, _ = env.reset()  # Unpack the observation from the tuple
+            done = False
+            total_reward = 0.0
 
-    env.close()
+            while not done:
+                # The model predicts an action based on the observation
+                action, _states = model.predict(obs, deterministic=True)
+                
+                # Apply the action in the environment
+                obs, reward, done, _, info = env.step(action)  # Unpack all returned values
+                
+                # Accumulate the reward for this episode
+                total_reward += reward
+
+            print(f"Episode finished: Total Reward: {total_reward}")
+
+    except KeyboardInterrupt:
+        print("Testing interrupted by user. Exiting...")
+
+    finally:
+        # Close the environment properly
+        env.close()
 
 if __name__ == '__main__':
     main()
+
