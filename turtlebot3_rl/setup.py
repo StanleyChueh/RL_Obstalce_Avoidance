@@ -22,6 +22,7 @@ setup(
         'console_scripts': [
             'train = turtlebot3_rl.train:main',
             'test = turtlebot3_rl.test:main',
+            'debug = turtlebot3_rl.debug_publisher:main',
         ],
     },
 )
