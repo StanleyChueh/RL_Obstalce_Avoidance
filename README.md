@@ -39,7 +39,7 @@ cd src
 # Clone your repository (assuming your repository is named turtlebot3_rl)
 git clone https://github.com/StanleyChueh/RL_Obstalce_Avoidance.git
 cd ..
-cp ~/rl_ws/src/RL_Obstacle_Avoidance/sac_turtlebot3_final.zip ~/rl_ws/
+cp ~/rl_ws/src/RL_Obstalce_Avoidance/sac_turtlebot3_final.zip ~/rl_ws/
 # Build the workspace
 cd ~/rl_ws
 colcon build
