@@ -1,5 +1,5 @@
 # RL_Obstalce_Avoidance
-Welcome to the TurtleBot3 Reinforcement Learning project! This guide will help you set up your environment, train a model, and test the trained model using the provided scripts. Follow the steps below to get started.
+This guide will help you set up your environment, train a model, and test the trained model using the provided scripts. Follow the steps below to get started.
 
 ## System Requirements
 Operating System: Ubuntu 20.04 (Recommended)
