@@ -57,6 +57,8 @@ ros2 launch turtlebot3_gazebo turtlebot3_world.launch.py
 # Run the training script
 ros2 run turtlebot3_rl train
 ```
+![Untitled ‑ Made with FlexClip (21)](https://github.com/user-attachments/assets/ce838659-8a4a-4555-a1ea-7e33fa35f877)
+
 ### Testing the Model
 ```
 # Run the testing script
